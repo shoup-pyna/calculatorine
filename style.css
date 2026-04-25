@@ -1,0 +1,119 @@
+body{ 
+    background: #efedf3; 
+    /* Définit une couleur de fond gris très clair pour toute la page, afin que la calculatrice foncée ressorte bien. */
+    margin: 0; 
+    /* Supprime les marges par défaut du navigateur pour éviter les espaces blancs inutiles sur les bords. */
+    display: flex; 
+    /* Active le mode "Flexbox", pour aligner des éléments. */
+    justify-content: center; 
+    /* Aligne la calculatrice horizontalement au centre exact de l'écran */
+    align-items: center; 
+    /* Aligne la calculatrice verticalement au centre. */
+    height: 100vh; 
+    /* Force le corps à prendre toute la hauteur de la fenêtre visible */
+} 
+ 
+h2 { 
+  color: #f5f1f0; 
+  /* Donne une couleur blanc cassé au texte. */
+  margin-bottom: 15px; 
+  /* Crée un espace de 15 pixels sous le titre pour éviter qu'il ne colle à l'écran de la calculatrice. */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* Définit une police de caractère de type "Serif" */
+} 
+ 
+button{ 
+    border-radius: 50%; 
+    /* C'est ce qui rend les boutons parfaitement ronds. */
+    width: 60px;
+    /* Définit une largeur fixe pour que les ronds soient réguliers. */
+    height: 60px;
+    /* Définit une longueur fixe pour que les ronds soient réguliers. */
+    border: none; 
+    /* Enlève la bordure grise par défaut des navigateurs. */
+    padding: 15px; 
+    /* Le padding crée un espace intérieur pour que les boutons ne touchent pas les bords du boîtier.*/
+    font-size: 1.2rem;
+     /* Le font-size règle la taille du chiffre à l'intérieur du bouton. */
+    font-weight: bold; 
+    /* Met le texte en gras pour une meilleure lisibilité. */
+    cursor: pointer; 
+    /* Change l'apparence de la souris en "main" quand on survole le bouton, indiquant qu'on peut cliquer. */
+    border-color: #00F5FF;
+    /* Definit la couleur de la bordure */
+} 
+ 
+.keys{ 
+    display: grid; 
+    /* Utilise le système de grille CSS pour organiser les boutons. */
+    grid-template-columns: repeat(4, 1fr); 
+    /* Crée automatiquement 4 colonnes de largeur égale */
+    gap: 10px; 
+    /* Ajoute un espace de 10 pixels entre chaque bouton (horizontalement et verticalement). */
+} 
+ 
+.calculator{ 
+    font-family: Arial, Helvetica, sans-serif; 
+    /* Indique le choix de police */
+    text-align: center;
+     /* Alignement au centre */
+    background: #03001f;
+     /* Donne un fond bleu nuit très foncé à la calculatrice. */
+    border-radius: 15px; 
+    /* Arrondit les coins du boîtier de la calculatrice. */
+    width: 300px; 
+    /* Fixe la largeur totale de la machine. */
+    padding: 20px; 
+    /* Crée un espace intérieur pour que les boutons ne touchent pas les bords du boîtier. */
+} 
+ 
+#display{ 
+    width: 94%; 
+    /* L'écran prend presque toute la largeur disponible. */
+    background: hsl(0, 0%, 20%); 
+    /* Un fond gris anthracite pour simuler un écran */
+    border-radius: 8px; 
+    border-color:rgb(240, 228, 228); 
+    padding: 10px; 
+    text-align: left; 
+    /* Aligne les chiffres à gauche */
+    margin-bottom: 15px;
+    font-size: 3rem; 
+    /* Affiche les chiffres en très grand. */
+    color: white; 
+    overflow: hidden; 
+    /* Empêche le texte de dépasser de l'écran si le nombre est trop long */
+} 
+ 
+button:hover{ 
+    background: hsl(0, 0%, 40%); 
+    /* Change la couleur de fond quand la souris passe dessus */
+} 
+ 
+button:active{ 
+    background: hsl(0, 0%, 50%); 
+    /* Change la couleur de fond quand on clique */
+} 
+ 
+.operator-btn{ 
+    background: hsl(200, 100%, 70%); 
+    /* Donne une couleur bleu clair spécifique aux boutons d'opérations pour les distinguer des chiffres */
+} 
+ 
+.operator-btn:hover{ 
+background: hsl(240, 100%, 25%);
+/* Change la couleur de fond quand la souris passe dessus */ 
+} 
+ 
+.equal-btn{ 
+    width: 60px; 
+    /* Donne au bouton egal le meme size que les autres boutons, afin de respecter la structure de la grille */  
+    background-color: green; 
+} 
+ 
+.equal-btn:hover{ 
+    background: rgb(2, 108, 12);
+    /* Change la couleur de fond quand la souris passe dessus */
+}
+
+/* NB: On utilise un . pour introduire une classe, # pour un identifiant, mais rien devant les balises comme h2 */

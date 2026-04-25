@@ -1,0 +1,61 @@
+<!DOCTYPE html>  
+<!-- C'est une déclaration obligatoire qui dit au navigateur que c'est un document de type HTML5. -->
+<html lang="en"> 
+<!-- C'est la racine du document qui indique que la langue du document est Anglais. -->
+    <head> 
+    <!-- Cette section contient des informations techniques qui ne s'afficheront pas directement sur la page -->
+        <meta charset="UTF-8"> 
+        <!-- C'est ce qui permet d'afficher correctement les accents et les symboles sans qu'ils ne soient remplacés par des caractères bizarres. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- C'est lui qui rend le site responsive, donc ajustable à la largeur de l'écran du téléphone ou de la tablette -->
+        <title>Calculatrice simple</title> 
+        <!-- C'est le nom qui apparaît sur l'onglet en haut du navigateur -->
+        <link rel="stylesheet" href="style.css">
+         <!-- Fais le lien du HTML et du CSS pour l'habillage du texte -->
+    </head> 
+    <!-- Fermeture de la section head, toutes les balises de fermeture suivront ce format -->
+    <body> 
+    <!-- Cette section renferme le corps de la page, tout ce qui y sera visible -->
+         <div class="calculator"> 
+        <!-- Conteneur principal de la calculatrice, c'est une boite qui englobe l'ensemble. Elle a une classe pour permettre de styliser tout cet ensemble d'un coup dans le CSS--> 
+            <h2> Casio </h2> 
+            <!-- Definit la taille du titre de la calculatrice, il existe 6 niveaux de titres allant de h1, le plus grand, à h6 le plus petit-->
+            <input id="display" readonly> 
+            <!-- C'est la zone où s'afficheront les calculs. L'attribut readonly empêche de taper n'importe quoi avec le clavier propre, afin d'utiliser les boutons de la calculatrice.  -->
+            <div class="keys"> 
+            <!-- Ce conteneur regroupe les boutons et utilise une classe "keys" qui nous permettra de les aligner sous forme de grille dans le CSS -->
+                <button onclick="insert('7')">7</button> 
+                <!-- Onclick est un attribut Javascript qui dit au navigateur qu'il faut exécuter cette fonction quand l'utilisateur clique sur 7, 8, 10.... -->
+                <button onclick="insert('8')">8</button> 
+                <!-- insert('8') ou tout autre caractere permet  d'ajouter le chiffre ou l'opérateur à l'écran -->
+                <button onclick="insert('9')">9</button>
+                <button onclick="insert('+')" class="operator-btn">+</button>  
+                <!-- La classe operator-btn permet de colorer différemment les boutons d'opération par rapport aux chiffres. -->
+                <button onclick="insert('4')">4</button> 
+                <button onclick="insert('5')">5</button> 
+                <button onclick="insert('6')">6</button> 
+                <button onclick="insert('-')" class="operator-btn">-</button> 
+                <button onclick="insert('1')">1</button> 
+                <button onclick="insert('2')">2</button> 
+                <button onclick="insert('3')">3</button> 
+                <button onclick="insert('*')" class="operator-btn">x</button>
+                <button onclick="insert('0')">0</button> 
+                <button onclick="insert('.')">.</button> 
+                <button onclick="toggleSign('+/-')">+/-</button> 
+                <!-- La fonction toggleSign sert à transformer un nombre positif en négatif, et inversement -->
+                <button onclick="insert('/')" class="operator-btn">/</button>
+                <button onclick="calculate()" class="equal-btn">=</button>  
+                <!-- Calculate() déclenche le calcul mathématique du contenu de l'écran et la classe equal-btn donne des attributs uniques au bouton egal  -->
+                <button onclick="Del()" class="operator-btn">Del</button> 
+                <!-- La fonction Del() efface uniquement le dernier caractère tapé -->
+                <button onclick="clearDisplay()" class="operator-btn">C</button> 
+                <!-- clearDisplay, comme son nom l'indique vide complètement l'écran -->
+                <button onclick="sqrt()" class="operator-btn">&radic;</button>
+                <!-- La fonction sqrt() permet de calculer la racine carrée du nombre affiché et &radic permet d'afficher le symbole de la racine carrée qui n'est pas directement disponible sur le clavier  -->
+                
+            </div> 
+         </div> 
+         <script src="main.js"></script> 
+         <!-- C'est l'importation du fichier javascript. Elle est en bas juste avant la fermeture du body pour s'assurer que le navigateur a fini de dessiner les boutons avant de charger le script qui doit les manipuler -->
+    </body> 
+</html> 
